@@ -1,0 +1,51 @@
+<section class="hero">
+  <div class="hero__content">
+    <h1>Eng mazali tortlar bizda! 🎂</h1>
+    <p>Har kuni yangi pishirilgan tort va shirinliklar. Tez buyurtma bering!</p>
+    <a routerLink="/user/order" class="btn">Buyurtma berish</a>
+  </div>
+  <div class="hero__img" role="img" aria-label="Fresh cakes and desserts"></div>
+</section>
+
+<section class="filters">
+  <input
+    type="search"
+    placeholder="Qidirish: Red Velvet, Cheesecake..."
+    [(ngModel)]="qModel"
+    (ngModelChange)="q.set($event)"
+  />
+
+  <select [(ngModel)]="categoryModel" (ngModelChange)="category.set($event)">
+    <option value="all">Barchasi</option>
+    <option value="cake">Tortlar</option>
+    <option value="dessert">Shirinliklar</option>
+    <option value="cookie">Kukilar</option>
+    <option value="other">Boshqa</option>
+  </select>
+
+  <select [(ngModel)]="sortModel" (ngModelChange)="sort.set($event)">
+    <option value="popular">Ommabop</option>
+    <option value="price-asc">Narx: o‘sish</option>
+    <option value="price-desc">Narx: kamayish</option>
+  </select>
+</section>
+
+<section class="grid">
+  <article class="card" *ngFor="let p of filtered()">
+    <div class="thumb" [style.backgroundImage]="'url(' + p.imageUrl + ')'">
+      <span class="badge new" *ngIf="p.id === 'p1'">Yangi</span>
+      <span class="badge discount" *ngIf="p.id === 'p2'">-20%</span>
+    </div>
+    <div class="body">
+      <h3>{{ p.name }}</h3>
+      <p class="desc">{{ p.shortDesc }}</p>
+      <div class="meta">
+        <span class="price">{{ formatSum(p.price) }}</span>
+        <a class="btn ghost" [routerLink]="['/user/order']" [queryParams]="{productId: p.id}">
+          Buyurtma
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
+

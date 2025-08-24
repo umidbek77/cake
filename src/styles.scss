@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* Minimal reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  background: #fff8fa;
+  color: #222;
+}
+img { max-width: 100%; display: block; }

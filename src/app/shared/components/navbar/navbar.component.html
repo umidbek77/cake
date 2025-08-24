@@ -1,0 +1,17 @@
+<nav class="nav">
+  <div class="brand">
+    <a routerLink="/user" class="logo">Diyor Tort</a>
+    <button class="hamburger" (click)="mobileOpen = !mobileOpen" aria-label="Toggle navigation">
+      ☰
+    </button>
+  </div>
+
+  <ul class="links" [class.open]="mobileOpen">
+    <li><a routerLink="/user">Home</a></li>
+    <li><a routerLink="/user/menu">Menu</a></li>
+    <li><a routerLink="/user/order">Order</a></li>
+    <li><a routerLink="/user/status">Status</a></li>
+    <li class="cta"><a routerLink="/curer/dashboard">Curer</a></li>
+    <li class="cta alt"><a routerLink="/admin/dashboard">Admin</a></li>
+  </ul>
+</nav>
