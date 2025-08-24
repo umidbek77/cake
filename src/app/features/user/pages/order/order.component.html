@@ -1,1 +1,37 @@
-<p>order works!</p>
+<section *ngIf="product; else notFound" class="order">
+  <div class="order__product">
+    <img [src]="product.imageUrl" [alt]="product.name" />
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.shortDesc }}</p>
+    <strong>{{ product.price.toLocaleString('uz-UZ') }} so‘m</strong>
+  </div>
+
+  <form [formGroup]="orderForm" (ngSubmit)="submitOrder()" class="order__form">
+    <label>
+      Ismingiz
+      <input type="text" formControlName="name" />
+    </label>
+    <label>
+      Telefon raqam
+      <input type="text" formControlName="phone" placeholder="+998901234567" />
+    </label>
+    <label>
+      Manzil
+      <input type="text" formControlName="address" />
+    </label>
+    <label>
+      Miqdor
+      <input type="number" formControlName="quantity" min="1" />
+    </label>
+    <label>
+      Izoh
+      <textarea formControlName="comment"></textarea>
+    </label>
+
+    <button type="submit" class="btn">Buyurtma berish</button>
+  </form>
+</section>
+
+<ng-template #notFound>
+  <p>❌ Mahsulot topilmadi.</p>
+</ng-template>

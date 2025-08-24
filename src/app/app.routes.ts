@@ -21,4 +21,10 @@ export const routes: Routes = [
     redirectTo: '/user',
     pathMatch: 'full',
   },
+
+  {
+  path: 'user/order',
+  loadComponent: () => import('./features/user/pages/order/order.component').then(m => m.OrderComponent)
+}
+
 ];
