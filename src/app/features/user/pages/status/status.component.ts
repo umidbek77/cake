@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 interface OrderStatus {
   id: string;
   productName: string;
-  status: 'pending' | 'preparing' | 'delivering' | 'completed';
+  currentStep: number;
 }
 
 @Component({
@@ -15,24 +15,16 @@ interface OrderStatus {
   styleUrls: ['./status.component.scss']
 })
 export class StatusComponent {
+  steps = [
+    { label: 'Qabul qilindi', desc: 'Buyurtma qabul qilindi', icon: '📦' },
+    { label: 'Tayyorlanmoqda', desc: 'Oshxonada tayyorlanmoqda', icon: '👨‍🍳' },
+    { label: 'Yetkazilmoqda', desc: 'Kuryer yo‘lda', icon: '🚚' },
+    { label: 'Yakunlandi', desc: 'Yetkazib berildi', icon: '🎉' }
+  ];
+
   orders = signal<OrderStatus[]>([
-    { id: '1', productName: 'Red Velvet', status: 'pending' },
-    { id: '2', productName: 'Cheesecake', status: 'preparing' },
-    { id: '3', productName: 'Chocolate Cookies', status: 'delivering' },
-    { id: '4', productName: 'Napoleon', status: 'completed' }
+    { id: '1', productName: 'Red Velvet', currentStep: 1 },
+    { id: '2', productName: 'Cheesecake', currentStep: 2 },
+    { id: '3', productName: 'Napoleon', currentStep: 3 }
   ]);
-
-  getStatusLabel(status: string): string {
-    switch (status) {
-      case 'pending': return 'Buyurtma qabul qilindi ✅';
-      case 'preparing': return 'Tayyorlanmoqda 👨‍🍳';
-      case 'delivering': return 'Yetkazib berilmoqda 🚚';
-      case 'completed': return 'Yakunlandi 🎉';
-      default: return 'Noma’lum';
-    }
-  }
-
-  getStatusClass(status: string): string {
-    return `status ${status}`;
-  }
 }
