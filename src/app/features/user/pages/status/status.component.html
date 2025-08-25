@@ -1,1 +1,12 @@
-<p>status works!</p>
+<section class="status">
+  <h1 class="status__title">Buyurtma holati</h1>
+
+  <div class="status__list">
+    <article class="status__card" *ngFor="let o of orders()">
+      <h3 class="product">{{ o.productName }}</h3>
+      <p [class]="getStatusClass(o.status)">
+        {{ getStatusLabel(o.status) }}
+      </p>
+    </article>
+  </div>
+</section>

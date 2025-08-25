@@ -1,0 +1,58 @@
+.status {
+  padding: 2rem 1rem;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    color: #e63946;
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__card {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #f2e8ea;
+    box-shadow: 0 4px 10px rgba(230, 57, 70, .06);
+
+    .product {
+      font-weight: 700;
+      margin: 0 0 .5rem;
+    }
+
+    .status {
+      font-size: 1rem;
+      font-weight: 600;
+      padding: .4rem .7rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .preparing {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+
+    .delivering {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    .completed {
+      background: #d4edda;
+      color: #155724;
+    }
+  }
+}

@@ -17,9 +17,9 @@ export class OrderComponent {
 
   // Mock productlar (home.component bilan bir xil bo‘lsin)
   products: Product[] = [
-    { id: 'p1', name: 'Red Velvet', price: 120000, imageUrl: 'assets/cakes/red-velvet.jpg', category: 'cake', shortDesc: 'Qizil barxat — yumshoq, kremli.' },
-    { id: 'p2', name: 'Chocolate Dream', price: 135000, imageUrl: 'assets/cakes/choco.jpg', category: 'cake', shortDesc: 'Shokoladli lazzat — klassika.' },
-    { id: 'p3', name: 'Berry Cheesecake', price: 110000, imageUrl: 'assets/desserts/cheesecake.jpg', category: 'dessert', shortDesc: 'Yengil va nordon — rezavorlar bilan.' },
+    { id: 'p1', name: 'Red Velvet', price: 120000, imageUrl: 'birthdaycakes.webp', category: 'cake', shortDesc: 'Qizil barxat — yumshoq, kremli.' },
+    { id: 'p2', name: 'Chocolate Dream', price: 135000, imageUrl: 'birthdaycakes.webp', category: 'cake', shortDesc: 'Shokoladli lazzat — klassika.' },
+    { id: 'p3', name: 'Berry Cheesecake', price: 110000, imageUrl: 'birthdaycakes.webp', category: 'dessert', shortDesc: 'Yengil va nordon — rezavorlar bilan.' },
   ];
 
   // URL’dagi productId ni olish

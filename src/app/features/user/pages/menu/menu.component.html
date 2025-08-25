@@ -1,1 +1,69 @@
-<p>menu works!</p>
+<section class="menu">
+  <h1 class="menu__title">Bizning Menyu 🍰</h1>
+
+  <!-- Tortlar -->
+  <div class="category">
+    <h2 class="category__title">Tortlar</h2>
+    <div class="grid">
+      <article class="card" *ngFor="let p of cakes()">
+        <div class="thumb" [style.backgroundImage]="'url(' + p.imageUrl + ')'"></div>
+        <div class="body">
+          <h3 class="name">{{ p.name }}</h3>
+          <p class="desc">{{ p.shortDesc }}</p>
+          <div class="meta">
+            <span class="price">{{ formatSum(p.price) }}</span>
+            <a class="btn ghost"
+               [routerLink]="['/user/order']"
+               [queryParams]="{productId: p.id}">
+              Buyurtma
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Dessertlar -->
+  <div class="category">
+    <h2 class="category__title">Dessertlar</h2>
+    <div class="grid">
+      <article class="card" *ngFor="let p of desserts()">
+        <div class="thumb" [style.backgroundImage]="'url(' + p.imageUrl + ')'"></div>
+        <div class="body">
+          <h3 class="name">{{ p.name }}</h3>
+          <p class="desc">{{ p.shortDesc }}</p>
+          <div class="meta">
+            <span class="price">{{ formatSum(p.price) }}</span>
+            <a class="btn ghost"
+               [routerLink]="['/user/order']"
+               [queryParams]="{productId: p.id}">
+              Buyurtma
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- Kukilar -->
+  <div class="category">
+    <h2 class="category__title">Kukilar</h2>
+    <div class="grid">
+      <article class="card" *ngFor="let p of cookies()">
+        <div class="thumb" [style.backgroundImage]="'url(' + p.imageUrl + ')'"></div>
+        <div class="body">
+          <h3 class="name">{{ p.name }}</h3>
+          <p class="desc">{{ p.shortDesc }}</p>
+          <div class="meta">
+            <span class="price">{{ formatSum(p.price) }}</span>
+            <a class="btn ghost"
+               [routerLink]="['/user/order']"
+               [queryParams]="{productId: p.id}">
+              Buyurtma
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
